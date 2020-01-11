@@ -189,6 +189,7 @@ npm install -g express # Node framework for Server-side.
 npm install -g @angular/cli # AngularJS
 npm install -g @vue/cli # VUEJS
 npm install -g firebase-tools # Firebase cli access
+npm install -g nodemon # Simple monitor script for use during development of a node.js app.
 
 # Install Heroku
 if ! [ -x "$(command -v heroku)" ]; then
