@@ -241,14 +241,14 @@ fi
 
 ## Development Apps
 # //////////////////////////////////////////////////////////////////////////////// #
-echo "\n${GREEN}==> ${NC}Installing Development Apps...\n"
+echo "\n${GREEN}==> ${NC}Development Apps\n"
 
 # Install Auto-Update for Cask
 echo "${BLUE}==> ${NC}Installing Auto-Update...\n"
 brew tap buo/cask-upgrade
 
 # General Development Apps
-echo "\n${GREEN}==> ${NC}Installing Web Development Apps...\n"
+echo "\n${GREEN}==> ${NC}Web Development Apps\n"
 echo "${BLUE}==> ${NC}Installing Docker Desktop...\n"
 brew cask install docker
 echo "\n${BLUE}==> ${NC}Installing Github Desktop...\n"
@@ -263,24 +263,24 @@ echo "\n${BLUE}==> ${NC}Installing Virtual Box...\n"
 brew cask install virtualbox
 
 # Android Development
-echo "\n${GREEN}==> ${NC}Installing Android Development Apps...\n"
+echo "\n${GREEN}==> ${NC}Android Development Apps\n"
 echo "${BLUE}==> ${NC}Installing Genymotion...\n"
 brew cask install genymotion
 
 # Web Development
-echo "\n${GREEN}==> ${NC}Installing Web Development Apps...\n"
+echo "\n${GREEN}==> ${NC}Web Development Apps\n"
 echo "${BLUE}==> ${NC}Installing Local by Flywheel...\n"
 brew cask install "local"
 echo "\n${BLUE}==> ${NC}Installing Mamp server...\n"
 brew cask install mamp
 
 # Java Development
-echo "\n${GREEN}==> ${NC}Installing Java Development Apps...\n"
+echo "\n${GREEN}==> ${NC}Java Development Apps\n"
 echo "${BLUE}==> ${NC}Installing Apache Netbeans...\n"
 brew cask install netbeans
 
 # Database
-echo "\n${GREEN}==> ${NC}Installing Database Apps...\n"
+echo "\n${GREEN}==> ${NC}Database Apps\n"
 echo "${BLUE}==> ${NC}Installing MongoDB Compass...\n"
 brew cask install mongodb-compass-community
 echo "\n${BLUE}==> ${NC}Installing Postgres...\n"
@@ -291,7 +291,7 @@ echo "\n${BLUE}==> ${NC}Installing Sequel Pro...\n"
 brew cask install sequel-pro
 
 # IDEs
-echo "\n${GREEN}==> ${NC}Installing Intergrated Development Environment (IDE)...\n"
+echo "\n${GREEN}==> ${NC}Intergrated Development Environment (IDE)\n"
 echo "${BLUE}==> ${NC}Installing Java Eclipse...\n"
 brew cask install eclipse-ide
 echo "\n${BLUE}==> ${NC}Installing Jetbrains Toolbox...\n"
@@ -302,7 +302,7 @@ echo "\n${BLUE}==> ${NC}Installing Visual Studio Code...\n"
 brew cask install visual-studio-code
 
 # Browsers
-echo "\n${GREEN}==> ${NC}Installing Browsers...\n"
+echo "\n${GREEN}==> ${NC}Browsers\n"
 echo "${BLUE}==> ${NC}Installing Brave Browser...\n"
 brew cask install brave-browser
 echo "\n${BLUE}==> ${NC}Installing Mozilla Firefox...\n"
@@ -313,7 +313,7 @@ echo "\n${BLUE}==> ${NC}Installing Google Chrome...\n"
 brew cask install google-chrome
 
 # Social Networking Apps
-echo "\n${GREEN}==> ${NC}Installing Social Networking Apps...\n"
+echo "\n${GREEN}==> ${NC}Social Networking Apps\n"
 echo "${BLUE}==> ${NC}Installing Discord...\n"
 brew cask install discord
 echo "\n${BLUE}==> ${NC}Installing Skype...\n"
@@ -322,7 +322,7 @@ echo "\n${BLUE}==> ${NC}Installing Slack...\n"
 brew cask install slack
 
 # Utility Apps
-echo "\n${GREEN}==> ${NC}Installing Utility Apps...\n"
+echo "\n${GREEN}==> ${NC}Utility Apps\n"
 echo "${BLUE}==> ${NC}Installing Alfred 4...\n"
 brew cask install alfred
 echo "\n${BLUE}==> ${NC}Installing CCleaner...\n"

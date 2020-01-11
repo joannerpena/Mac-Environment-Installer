@@ -1,10 +1,10 @@
 # DEV Environment Installer
 
-This script was created with the objective of install everything you need for a development environment in your MacOs. From installing Brew for package downloading to Install NPM packages for local usage.
+This script was created with the objective of installing everything you need for a development environment in your MacOs. From installing Brew for package downloading to Install NPM packages for local usage.
 
 ## Still under development
 
-Even thought this script is fully functional as now, I'm still working on the stability of the same. So if you get any error or you have any recommendation of what you would like to see in added in this script, do not hesitate in letting me know.
+Even though this script is fully functional as of now, I'm still working on the stability of it. So if you get any error or you have any recommendation of what you would like to see added in this script, do not hesitate in letting me know.
 
 ## List of Packages and Technologies added to this Script for Installation
 
