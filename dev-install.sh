@@ -241,7 +241,7 @@ fi
 
 ## Development Apps
 # //////////////////////////////////////////////////////////////////////////////// #
-echo "\n${GREEN}==> ${NC}Development Apps\n"
+echo "\n${NC}==================== ${GREEN}Development Apps${NC} ====================\n"
 
 # Install Auto-Update for Cask
 echo "${BLUE}==> ${NC}Installing Auto-Update...\n"
@@ -251,6 +251,8 @@ brew tap buo/cask-upgrade
 echo "\n${GREEN}==> ${NC}Web Development Apps\n"
 echo "${BLUE}==> ${NC}Installing Docker Desktop...\n"
 brew cask install docker
+echo "\n${BLUE}==> ${NC}Installing Transmit FTP...\n"
+brew cask install transmit
 echo "\n${BLUE}==> ${NC}Installing Github Desktop...\n"
 brew cask install github
 echo "\n${BLUE}==> ${NC}Installing iTerm2 Terminal...\n"
@@ -266,6 +268,8 @@ brew cask install virtualbox
 echo "\n${GREEN}==> ${NC}Android Development Apps\n"
 echo "${BLUE}==> ${NC}Installing Genymotion...\n"
 brew cask install genymotion
+echo "${BLUE}==> ${NC}Installing Vysor...\n"
+brew cask install vysor
 
 # Web Development
 echo "\n${GREEN}==> ${NC}Web Development Apps\n"
@@ -334,6 +338,8 @@ echo "\n${BLUE}==> ${NC}Installing Keka...\n"
 brew cask install keka
 echo "\n${BLUE}==> ${NC}Installing Malwarebytes...\n"
 brew cask install malwarebytes
+echo "\n${BLUE}==> ${NC}Installing Spotify...\n"
+brew cask install spotify
 echo "\n${BLUE}==> ${NC}Installing Onyx...\n"
 brew cask install onyx
 
