@@ -104,6 +104,7 @@ Even though this script is fully functional as of now, I'm still working on the 
 - CCleaner
 - Dropbox
 - Evernote
+- Spotify
 - ImageOptim
 - Keka
 - Malwarebytes
