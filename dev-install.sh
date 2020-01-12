@@ -274,11 +274,6 @@ brew cask install "local"
 echo "\n${BLUE}==> ${NC}Installing Mamp server...\n"
 brew cask install mamp
 
-# Java Development
-echo "\n${GREEN}==> ${NC}Java Development Apps\n"
-echo "${BLUE}==> ${NC}Installing Apache Netbeans...\n"
-brew cask install netbeans
-
 # Database
 echo "\n${GREEN}==> ${NC}Database Apps\n"
 echo "${BLUE}==> ${NC}Installing MongoDB Compass...\n"
@@ -294,6 +289,8 @@ brew cask install sequel-pro
 echo "\n${GREEN}==> ${NC}Intergrated Development Environment (IDE)\n"
 echo "${BLUE}==> ${NC}Installing Java Eclipse...\n"
 brew cask install eclipse-ide
+echo "\n${BLUE}==> ${NC}Installing Apache Netbeans...\n"
+brew cask install netbeans
 echo "\n${BLUE}==> ${NC}Installing Jetbrains Toolbox...\n"
 brew cask install jetbrains-toolbox
 echo "\n${BLUE}==> ${NC}Installing Unity HUB...\n"

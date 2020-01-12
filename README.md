@@ -1,5 +1,7 @@
 # DEV Environment Installer
 
+**DISCLAIMER:** It is recommended to use this script with a Fresh installation of your MacOs System to avoid any random errors.
+
 This script was created with the objective of installing everything you need for a development environment in your MacOs. From installing Brew for package downloading to Install NPM packages for local usage.
 
 ## Still under development
@@ -13,6 +15,7 @@ Even though this script is fully functional as of now, I'm still working on the 
   - OpenSSH
   - Vim
   - [Vim Awesome](https://github.com/amix/vimrc)
+  - Java
   - Python
   - Python Tools : _pip3_
   - Ruby
@@ -21,6 +24,7 @@ Even though this script is fully functional as of now, I'm still working on the 
   - Vagrant
   - Yarn Bundle Manager
   - Cocoapods
+  - Gradle
 - **Mac Development Tools**
 - **Oh-My-ZSH**
   - [ZSH Theme : Bullet-Train](https://github.com/caiogondim/bullet-train.zsh)
@@ -46,3 +50,61 @@ Even though this script is fully functional as of now, I'm still working on the 
   - [vue/cli](https://www.npmjs.com/package/@vue/cli) - [VueJS](https://www.npmjs.com/package/@vue/cli)
   - [firebase-tools](https://www.npmjs.com/package/firebase-tools) - Firebase cli access
   - [nodemon](https://www.npmjs.com/package/nodemon) - Simple monitor script for use during development of a node.js app.
+
+## List of Development Apps
+### General Development Apps
+
+- Docker
+- Github
+- iTerm2
+- Vagrant
+- Vagrant Manager
+- Virtual Box
+
+### Android Development
+
+- Genymotion
+
+### Web Development
+
+- Local by Flywheel
+- MAMP
+
+### Database
+
+- MongoDB Compass
+- Postgres
+- PSequel
+- Sequel Pro
+
+### IDEs
+
+- Eclipse
+- Apache Netbeans
+- Jetbrains Toolbox
+- Unity HUB
+- Visual Studio Code
+
+### Browsers
+
+- Brave Browser
+- Mozilla Firefox
+- Mozilla Firefox Developer Edition
+- Google Chrome
+
+### Social Networking Apps
+
+- Discord
+- Skype
+- Slack
+
+### Utilities Apps
+
+- Alfred 4
+- CCleaner
+- Dropbox
+- Evernote
+- ImageOptim
+- Keka
+- Malwarebytes
+- Onyx
