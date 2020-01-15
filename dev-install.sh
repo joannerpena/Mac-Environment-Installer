@@ -1,79 +1,93 @@
 #!/bin/sh
 #
-#
-# Title : Development Environment Installer
-# Joanner Pena
-# Github: joannerpena
-# Version: v1.0.0
-# Date: 12/23/2019
-#
-# Script install everything needed to work with Web and Mobile Development for Mac
+#### Title : Development Environment Installer
+#### Script install everything needed to work with Web and Mobile Development for Mac
+#### Github: joannerpena
+#### Version: v1.0.0
+#### Date: 12/23/2019
+#### Written by: Joanner Pena
 #
 clear
 
 RED="\033[0;31m"
 NC="\033[0m"
 GREEN="\033[0;32m"
-BLUE="\33[0;34m"
+BLUE="\033[0;34m"
 
+BOLD=$(tput bold)
+NORMAL=$(tput sgr0)
 
-echo "Welcome to Mac Development Environment Installer Script by Joannerpena\n"
+# BOLD_Tx_ARROW "text" // Only bold text.
+BOLD_Tx (){
+    echo "${BOLD} $1 ${NORMAL}"
+}
+
+# BOLD_Tx_ARROW "text" $color // Colored arrow (==>) with text.
+BOLD_Tx_ARROW (){
+    echo "\n$2==> ${NC}${BOLD}$1${NORMAL}\n"
+}
+
+# BOLD_HEADER "text" // Header text.
+BOLD_HEADER (){
+    echo "${NC}==================== ${GREEN}${BOLD}$1${NORMAL}${NC} ====================\n"
+}
+
+BOLD_Tx "Welcome to Mac Development Environment Installer Script by Joannerpena\n"
 
 ## GENERAL PURPOSE // MUST-HAVE
 # //////////////////////////////////////////////////////////////////////////////// #
-echo "\n${GREEN}Starting Installation...\n"
-echo "${NC}==================== ${GREEN}GENERAL PURPOSE INSTALLATION${NC} ====================\n"
+BOLD_Tx_ARROW "Starting Installation..." $GREEN
+BOLD_HEADER "GENERAL PURPOSE INSTALLATION"
 
 # Install Homebrew
-echo "${NC}==================== ${GREEN}Homebrew${NC} ====================\n"
+BOLD_Tx_ARROW "Homebrew" $GREEN
 if ! [ -x "$(command -v brew)" ]; then
-    echo "${GREEN}~ ${NC}Installing homebrew...\n"
+    BOLD_Tx_ARROW "Installing homebrew..." $BLUE
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Update repository
-echo "\n${GREEN}~ ${NC}Updating homebrew repository...\n"
+BOLD_Tx_ARROW "Updating homebrew repository..." $BLUE
 brew update
 
 # Check if it's working
-echo "\n${GREEN}~ ${NC}Check if homebrew is installed correctly...\n"
+BOLD_Tx_ARROW "Check if homebrew is installed correctly..." $BLUE
 brew doctor
 
 echo "Press any button to continue..."
 read
 
 # Install Mac Development Tools
-echo "\n${NC}==================== ${GREEN}Mac Development Tools${NC} ====================\n"
-echo "\n${GREEN}~ ${NC}Installing Mac Development Tools...\n"
+BOLD_HEADER "Mac Development Tools"
+BOLD_Tx_ARROW "Installing Mac Development Tools..." $GREEN
 xcode-select --install
 
 # Install ZSH // Oh-My-ZSH
-echo "\n${NC}==================== ${GREEN}Oh My ZSH${NC} ====================\n"
-echo "\n${GREEN}~ ${NC}Installing Oh my ZSH...\n"
+BOLD_HEADER "Oh My ZSH"
+BOLD_Tx_ARROW "Installing Oh my ZSH..." $GREEN
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install ZSH Theme
-echo "\n${GREEN}~ ${NC}Installing ZSH Theme...\n"
+BOLD_Tx_ARROW "Installing ZSH Theme..." $BLUE
 git clone https://github.com/caiogondim/bullet-train.zsh.git ~/Downloads/bullet-train
 cp ~/Downloads/bullet-train/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes
 rm -rf ~/Downloads/bullet-train
 
 # Download ZSH Config file
-echo "\n${GREEN}~ ${NC}Downloading ZSH Config...\n"
+BOLD_Tx_ARROW "Downloading ZSH Config..." $BLUE
 git clone https://gist.github.com/c227b6b00817eecd79523aa639ade6fc.git ~/Downloads/zsh-config
 cp ~/Downloads/zsh-config/.zshrc ~/
 rm -rf ~/Downloads/zsh-config
 source ~/.zshrc
 
 # Installing Powerline fonts
-echo "\n${GREEN}~ ${NC}Installing Powerline Fonts...\n"
+BOLD_Tx_ARROW "Downloading ZSH Config..." $BLUE
 git clone https://github.com/powerline/fonts.git ~/Downloads/powerline
 sh ~/Downloads/powerline/install.sh
 rm -rf ~/Downloads/powerline
 
 # Install Git
-echo "\n${NC}==================== ${GREEN}GIT${NC} ====================\n"
-echo "\n${GREEN}~ ${NC}Installing Git...\n"
+BOLD_Tx_ARROW "Installing Git..." $GREEN
 brew install git
 
 # Setup Git global variables
@@ -98,84 +112,80 @@ ssh-add -k ~/.ssh/id_rsa
 
 # Install OpenSSH
 if ! [ -x "$(command -v openssh)" ]; then
-    echo "\n${NC}==================== ${GREEN}OpenSSH${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing OpenSSH...\n"
+    BOLD_Tx_ARROW "Installing OpenSSH..." $BLUE
     brew install openssh
 fi
 
 # Install Vim
 if ! [ -x "$(command -v vim)" ]; then
-    echo "\n${NC}==================== ${GREEN}Vim${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing Vim...\n"
+    BOLD_Tx_ARROW "Installing Vim..." $GREEN
     brew install vim
 fi
 
 # Install vim awesome
-echo "\n${GREEN}~ ${NC}Installing Vim Awesome...\n"
+BOLD_Tx_ARROW "Installing Vim Awesome..." $BLUE
 git clone https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 ## WEB DEVELOPMENT
 # //////////////////////////////////////////////////////////////////////////////// #
-echo "\n${GREEN}Starting Web Development Installation...\n"
+BOLD_HEADER "WEB DEVELOPMENT"
+BOLD_Tx_ARROW "Starting Web Development Installation..." $GREEN
+BOLD_Tx_ARROW "Installing Databases..." $GREEN
 
 # Install Postgres
 if ! [ -x "$(command -v postgres)" ]; then
-    echo "\n${NC}==================== ${GREEN}Postgres${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing postgres...\n"
+    BOLD_Tx_ARROW "Installing postgres..." $BLUE
     brew install postgres
 fi
 
 # Install MySql
 if ! [ -x "$(command -v mysql)" ]; then
-    echo "\n${NC}==================== ${GREEN}MySql${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing mySql...\n"
+    BOLD_Tx_ARROW "Installing mySql..." $BLUE
     brew install mysql
 fi
 
 # Install SQLite
 if ! [ -x "$(command -v sqlite)" ]; then
-    echo "\n${NC}==================== ${GREEN}SQlite${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing SqLite...\n"
+    BOLD_Tx_ARROW "Installing SqLite..." $BLUE
     brew install sqlite
 fi
 
 # Install MongoDB
 if ! [ -x "$(command -v mongo)" ]; then
-    echo "\n${NC}==================== ${GREEN}MongoDB${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing MongoDB...\n"
+    BOLD_Tx_ARROW "Installing MongoDB..." $BLUE
     brew tap mongodb/brew
     brew install mongodb-community
 fi
 
+BOLD_Tx_ARROW "Starting Web Development Languages installation..." $GREEN
+
 # Install Python
 if ! [ -x "$(command -v python3)" ]; then
-    echo "\n${NC}==================== ${GREEN}Python${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing MongoDB...\n"
+    BOLD_Tx_ARROW "Installing Python..." $BLUE
     brew install python
 fi
 
 # Install Python tools
 if ! [ -x "$(command -v pip3)" ]; then
-    echo "\n${NC}==================== ${GREEN}Python Tools${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing Pip...\n"
+    BOLD_Tx_ARROW "Installing Pip..." $BLUE
     pip3 install --upgrade setuptools
     pip3 install --upgrade pip3
 fi
 
 # Install Ruby
-echo "\n${NC}==================== ${GREEN}Ruby${NC} ====================\n"
-echo "\n${GREEN}~ ${NC}Installing Ruby...\n"
+BOLD_Tx_ARROW "Installing Ruby..." $BLUE
 brew install rbenv ruby-build rbenv-default-gems rbenv-gemset
 gem update --system
 
 # Install NodeJs
-echo "\n${NC}==================== ${GREEN}NodeJS${NC} ====================\n"
-echo "\n${GREEN}~ ${NC}Installing NodeJs...\n"
+BOLD_Tx_ARROW "Installing NodeJs..." $BLUE
 brew install node
 
 # Node packages for Web Development
-echo "\n${NC}==================== ${GREEN}NPM Packages Installations${NC} ====================\n"
+BOLD_HEADER "NPM Packages Installations"
+BOLD_Tx_ARROW "Installing NPM Packages..." $GREEN
+
 npm install -g np # A better npm publish.
 npm install -g ndb # Improved debugger for Node.js via Chrome DevTools.
 npm install -g now # Simple deployment.
@@ -192,159 +202,188 @@ npm install -g @vue/cli # VUEJS
 npm install -g firebase-tools # Firebase cli access
 npm install -g nodemon # Simple monitor script for use during development of a node.js app.
 
+BOLD_HEADER "DevOps"
+BOLD_Tx_ARROW "Starting DevOps Installation..." $GREEN
+
 # Install Heroku
 if ! [ -x "$(command -v heroku)" ]; then
-    echo "\n${NC}==================== ${GREEN}Heroku${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing Heroku...\n"
+    BOLD_Tx_ARROW "Installing Heroku..." $BLUE
     brew tap heroku/brew && brew install heroku
 fi
 
 # Install Vagrant
 if ! [ -x "$(command -v vagrant)" ]; then
-    echo "\n${NC}==================== ${GREEN}Vagrant${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing Vagrant...\n"
+    BOLD_Tx_ARROW "Installing Vagrant..." $BLUE
     brew cask install vagrant
     brew cask install vagrant-manager
 fi
 
 # Install Yarn Bundle Manager
 if ! [ -x "$(command -v yarn)" ]; then
-    echo "\n${NC}==================== ${GREEN}Yarn${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing Yarn...\n"
+    BOLD_Tx_ARROW "Installing Yarn..." $GREEN
     brew install yarn
 fi
 
 ## Mobile Development
 # //////////////////////////////////////////////////////////////////////////////// #
-echo "\n${GREEN}Starting Mobile Development Installation...\n"
+BOLD_HEADER "MOBILE DEVELOPMENT"
+BOLD_Tx_ARROW "Starting Mobile Development Installation..." $GREEN
+
 
 # Install IOS CocoaPods
 if ! [ -x "$(command -v pod)" ]; then
-    echo "\n${NC}==================== ${GREEN}IOS Cocoapods${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing Cocoapods...\n"
+    BOLD_Tx_ARROW "Starting IOS Development Environment installation..." $GREEN
+    BOLD_Tx_ARROW "Installing Cocoapods..." $BLUE
     brew install cocoapods
 fi
 
 # Install Android Gradle
 if ! [ -x "$(command -v gradle)" ]; then
-    echo "\n${NC}==================== ${GREEN}Android Gradle${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing Gradle...\n"
+    BOLD_Tx_ARROW "Starting Androind Development Enviroment Installation..." $GREEN
+    BOLD_Tx_ARROW "Installing Gradle..." $BLUE
     brew install gradle
 fi
 
 # Install Java
 if ! [ -x "$(command -v java)" ]; then
-    echo "\n${NC}==================== ${GREEN}Java${NC} ====================\n"
-    echo "\n${GREEN}~ ${NC}Installing Java...\n"
+    BOLD_Tx_ARROW "Installing Java..." $BLUE
     brew cask install homebrew/cask-versions/java
 fi
 
 ## Development Apps
 # //////////////////////////////////////////////////////////////////////////////// #
-echo "\n${NC}==================== ${GREEN}Development Apps${NC} ====================\n"
+BOLD_HEADER "Development Apps"
 
 # Install Auto-Update for Cask
-echo "${BLUE}==> ${NC}Installing Auto-Update...\n"
+BOLD_Tx_ARROW "Installing Auto-Update..." $GREEN
 brew tap buo/cask-upgrade
 
 # General Development Apps
-echo "\n${GREEN}==> ${NC}Web Development Apps\n"
-echo "${BLUE}==> ${NC}Installing Docker Desktop...\n"
+BOLD_Tx_ARROW "Starting installation of Web Development Apps" $GREEN
+BOLD_Tx_ARROW "Installing Docker Desktop..." $BLUE
 brew cask install docker
-echo "\n${BLUE}==> ${NC}Installing Transmit FTP...\n"
+
+BOLD_Tx_ARROW "Installing Transmit FTP..." $BLUE
 brew cask install transmit
-echo "\n${BLUE}==> ${NC}Installing Github Desktop...\n"
+
+BOLD_Tx_ARROW "Installing Github Desktop..." $BLUE
 brew cask install github
-echo "\n${BLUE}==> ${NC}Installing iTerm2 Terminal...\n"
+
+BOLD_Tx_ARROW "Installing iTerm2 Terminal..." $BLUE
 brew cask install iterm2
-echo "\n${BLUE}==> ${NC}Installing Vagrant...\n"
+
+BOLD_Tx_ARROW "Installing Vagrant..." $BLUE
 brew cask install vagrant
-echo "\n${BLUE}==> ${NC}Installing Vagrant Manager...\n"
+
+BOLD_Tx_ARROW "Installing Vagrant Manager..." $BLUE
 brew cask install vagrant-manager
-echo "\n${BLUE}==> ${NC}Installing Virtual Box...\n"
+
+BOLD_Tx_ARROW "Installing Virtual Box..." $BLUE
 brew cask install virtualbox
 
 # Android Development
-echo "\n${GREEN}==> ${NC}Android Development Apps\n"
-echo "${BLUE}==> ${NC}Installing Genymotion...\n"
+BOLD_Tx_ARROW "Starting installation of Android Development Apps" $GREEN
+BOLD_Tx_ARROW "Installing Genymotion..." $BLUE
 brew cask install genymotion
-echo "${BLUE}==> ${NC}Installing Vysor...\n"
+
+BOLD_Tx_ARROW "Installing Vysor..." $BLUE
 brew cask install vysor
 
 # Web Development
-echo "\n${GREEN}==> ${NC}Web Development Apps\n"
-echo "${BLUE}==> ${NC}Installing Local by Flywheel...\n"
+BOLD_Tx_ARROW "Starting installation of Web Development Apps" $GREEN
+BOLD_Tx_ARROW "Installing Local by Flywheel..." $BLUE
 brew cask install "local"
-echo "\n${BLUE}==> ${NC}Installing Mamp server...\n"
+
+BOLD_Tx_ARROW "Installing Mamp server..." $BLUE
 brew cask install mamp
 
 # Database
-echo "\n${GREEN}==> ${NC}Database Apps\n"
-echo "${BLUE}==> ${NC}Installing MongoDB Compass...\n"
+BOLD_Tx_ARROW "Starting installation of Database Apps" $GREEN
+BOLD_Tx_ARROW "Installing MongoDB Compass..." $BLUE
 brew cask install mongodb-compass-community
-echo "\n${BLUE}==> ${NC}Installing Postgres...\n"
+
+BOLD_Tx_ARROW "Installing Postgres..." $BLUE
 brew cask install postgres
-echo "\n${BLUE}==> ${NC}Installing PSequel...\n"
+
+BOLD_Tx_ARROW "Installing PSequel..." $BLUE
 brew cask install psequel
-echo "\n${BLUE}==> ${NC}Installing Sequel Pro...\n"
+
+BOLD_Tx_ARROW "Installing Sequel Pro..." $BLUE
 brew cask install sequel-pro
 
 # IDEs
-echo "\n${GREEN}==> ${NC}Intergrated Development Environment (IDE)\n"
-echo "${BLUE}==> ${NC}Installing Java Eclipse...\n"
+BOLD_Tx_ARROW "Intergrated Development Environment (IDE)" $GREEN
+BOLD_Tx_ARROW "Installing Java Eclipse..." $BLUE
 brew cask install eclipse-ide
-echo "\n${BLUE}==> ${NC}Installing Apache Netbeans...\n"
+
+BOLD_Tx_ARROW "Installing Apache Netbeans..." $BLUE
 brew cask install netbeans
-echo "\n${BLUE}==> ${NC}Installing Jetbrains Toolbox...\n"
+
+BOLD_Tx_ARROW "Installing Jetbrains Toolbox..." $BLUE
 brew cask install jetbrains-toolbox
-echo "\n${BLUE}==> ${NC}Installing Unity HUB...\n"
+
+BOLD_Tx_ARROW "Installing Unity HUB..." $BLUE
 brew cask install unity-hub
-echo "\n${BLUE}==> ${NC}Installing Visual Studio Code...\n"
+
+BOLD_Tx_ARROW "Installing Visual Studio Code..." $BLUE
 brew cask install visual-studio-code
 
 # Browsers
-echo "\n${GREEN}==> ${NC}Browsers\n"
-echo "${BLUE}==> ${NC}Installing Brave Browser...\n"
-brew cask install brave-browser
-echo "\n${BLUE}==> ${NC}Installing Mozilla Firefox...\n"
-brew cask install firefox
-echo "\n${BLUE}==> ${NC}Installing Mozilla Firefox Developer Edition...\n"
-brew cask install homebrew/cask-versions/firefox-developer-edition
-echo "\n${BLUE}==> ${NC}Installing Google Chrome...\n"
+BOLD_Tx_ARROW "Starting installation of Browser Apps" $GREEN
+BOLD_Tx_ARROW "Installing Google Chrome..." $BLUE
 brew cask install google-chrome
 
+BOLD_Tx_ARROW "Installing Brave Browser..." $BLUE
+brew cask install brave-browser
+
+BOLD_Tx_ARROW "Installing Mozilla Firefox..." $BLUE
+brew cask install firefox
+
+BOLD_Tx_ARROW "Installing Mozilla Firefox Developer Edition..." $BLUE
+brew cask install homebrew/cask-versions/firefox-developer-edition
+
 # Social Networking Apps
-echo "\n${GREEN}==> ${NC}Social Networking Apps\n"
-echo "${BLUE}==> ${NC}Installing Discord...\n"
+BOLD_Tx_ARROW "Starting installation of Social Networking Apps" $GREEN
+BOLD_Tx_ARROW "Installing Discord..." $BLUE
 brew cask install discord
-echo "\n${BLUE}==> ${NC}Installing Skype...\n"
+
+BOLD_Tx_ARROW "Installing Skype..." $BLUE
 brew cask install skype
-echo "\n${BLUE}==> ${NC}Installing Slack...\n"
+
+BOLD_Tx_ARROW "Installing Slack..." $BLUE
 brew cask install slack
 
 # Utility Apps
-echo "\n${GREEN}==> ${NC}Utility Apps\n"
-echo "${BLUE}==> ${NC}Installing Alfred 4...\n"
+BOLD_Tx_ARROW "Starting installation of Utility Apps" $GREEN
+BOLD_Tx_ARROW "Installing Alfred 4..." $BLUE
 brew cask install alfred
-echo "\n${BLUE}==> ${NC}Installing CCleaner...\n"
+
+BOLD_Tx_ARROW "Installing CCleaner..." $BLUE
 brew cask install ccleaner
-echo "\n${BLUE}==> ${NC}Installing Dropbox...\n"
+
+BOLD_Tx_ARROW "Installing Dropbox..." $BLUE
 brew cask install dropbox
-echo "\n${BLUE}==> ${NC}Installing Evernote...\n"
+
+BOLD_Tx_ARROW "Installing Evernote..." $BLUE
 brew cask install evernote
-echo "\n${BLUE}==> ${NC}Installing ImageOptim...\n"
+
+BOLD_Tx_ARROW "Installing ImageOptim..." $BLUE
 brew cask install imageoptim
-echo "\n${BLUE}==> ${NC}Installing Keka...\n"
+
+BOLD_Tx_ARROW "Installing Keka..." $BLUE
 brew cask install keka
-echo "\n${BLUE}==> ${NC}Installing Malwarebytes...\n"
+
+BOLD_Tx_ARROW "Installing Malwarebytes..." $BLUE
 brew cask install malwarebytes
-echo "\n${BLUE}==> ${NC}Installing Spotify...\n"
+
+BOLD_Tx_ARROW "Installing Spotify..." $BLUE
 brew cask install spotify
-echo "\n${BLUE}==> ${NC}Installing Onyx...\n"
+
+BOLD_Tx_ARROW "Installing Onyx..." $BLUE
 brew cask install onyx
 
 # Set for Auto-Update with Brew Update
-echo "\n${GREEN}==> ${NC}Setting Apps for Auto-Update when using brew update...\n"
+BOLD_Tx_ARROW "Setting Apps for Auto-Update when using brew update..." $GREEN
 brew cu -a
 
 ## FINISH
