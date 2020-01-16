@@ -2,7 +2,7 @@
 
 **DISCLAIMER:** It is recommended to use this script with a Fresh installation of your MacOs System to avoid any random errors.
 
-This script was created with the objective of installing everything you need for a development environment in your MacOs. From installing Brew for package downloading to Install NPM packages for local usage.
+This script was created with the objective of installing everything you need for a development environment in your MacOs. From installing Brew for package downloading to Installing NPM packages for local usage.
 
 ## Still under development
 
