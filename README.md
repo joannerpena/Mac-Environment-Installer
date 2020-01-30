@@ -8,6 +8,10 @@ This script was created with the objective of installing everything you need for
 
 Even though this script is fully functional as of now, I'm still working on the stability of it. So if you get any error or you have any recommendation of what you would like to see added in this script, do not hesitate in letting me know.
 
+## Update Cask Apps after install
+
+`brew cu -af`
+
 ## List of Packages and Technologies added to this Script for Installation
 
 - **Homebrew**
@@ -81,8 +85,8 @@ Even though this script is fully functional as of now, I'm still working on the 
 
 - Eclipse
 - Apache Netbeans
-- Jetbrains Toolbox
-- Unity HUB
+- Jetbrains Toolbox | _Install any Jetbrain app + Android Studios with Jetbrain Toolbox_
+- Unity HUB | _Install Unity IDE for Gaming Development_
 - Visual Studio Code
 
 ### Browsers
