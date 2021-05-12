@@ -186,22 +186,6 @@ brew install node
 BOLD_HEADER "NPM Packages Installations"
 BOLD_Tx_ARROW "Installing NPM Packages..." $GREEN
 
-npm install -g np # A better npm publish.
-npm install -g ndb # Improved debugger for Node.js via Chrome DevTools.
-npm install -g now # Simple deployment.
-npm install -g vtop # Visual command-line replacement for top.
-npm install -g create-react-app # Standard React app builder.
-nvm create-react-native-app # Standard React Native app builder.
-npm install -g eslint # A fully pluggable tool for identifying and reporting on patterns in JavaScript.
-npm install -g prettier # An opinionated code formatter.
-npm install -g gulp # Automate and enhance your workflow.
-npm install -g node-sass # Sass for CSS
-npm install -g express # Node framework for Server-side.
-npm install -g @angular/cli # AngularJS
-npm install -g @vue/cli # VUEJS
-npm install -g firebase-tools # Firebase cli access
-npm install -g nodemon # Simple monitor script for use during development of a node.js app.
-
 BOLD_HEADER "DevOps"
 BOLD_Tx_ARROW "Starting DevOps Installation..." $GREEN
 
