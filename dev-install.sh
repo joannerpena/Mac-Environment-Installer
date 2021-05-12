@@ -80,7 +80,7 @@ git config --global user.email $GITEMAIL
 
 # Generate SSH-KEY
 echo
-ssh-keygen -t rsa -C $GITEMAIL
+ssh-keygen -t ed25519 -C $GITEMAIL
 
 # Add Key to SSH-AGENT
 eval "$(ssh-agent -s)"
