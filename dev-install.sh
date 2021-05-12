@@ -198,8 +198,8 @@ fi
 # Install Vagrant
 if ! [ -x "$(command -v vagrant)" ]; then
     BOLD_Tx_ARROW "Installing Vagrant..." $BLUE
-    brew cask install vagrant
-    brew cask install vagrant-manager
+    brew install --cask vagrant
+    brew install --cask vagrant-manager
 fi
 
 # Install Yarn Bundle Manager
@@ -231,7 +231,7 @@ fi
 # Install Java
 if ! [ -x "$(command -v java)" ]; then
     BOLD_Tx_ARROW "Installing Java..." $BLUE
-    brew cask install homebrew/cask-versions/java
+    brew install --cask oracle-jdk
 fi
 
 ## Development Apps
@@ -245,126 +245,129 @@ brew tap buo/cask-upgrade
 # General Development Apps
 BOLD_Tx_ARROW "Starting installation of Web Development Apps" $GREEN
 BOLD_Tx_ARROW "Installing Docker Desktop..." $BLUE
-brew cask install docker
+brew install --cask docker
 
 BOLD_Tx_ARROW "Installing Transmit FTP..." $BLUE
-brew cask install transmit
+brew install --cask transmit
 
 BOLD_Tx_ARROW "Installing Github Desktop..." $BLUE
-brew cask install github
+brew install --cask github
+
+BOLD_Tx_ARROW "Installing GitKraken..." $BLUE
+brew install --cask gitkraken
 
 BOLD_Tx_ARROW "Installing iTerm2 Terminal..." $BLUE
-brew cask install iterm2
+brew install --cask iterm2
+
+BOLD_Tx_ARROW "Installing HyperJS Terminal..." $BLUE
+brew install --cask hyper
 
 BOLD_Tx_ARROW "Installing Vagrant..." $BLUE
-brew cask install vagrant
+brew install --cask vagrant
 
 BOLD_Tx_ARROW "Installing Vagrant Manager..." $BLUE
-brew cask install vagrant-manager
+brew install --cask vagrant-manager
 
 BOLD_Tx_ARROW "Installing Virtual Box..." $BLUE
-brew cask install virtualbox
+brew install --cask virtualbox
 
 # Android Development
 BOLD_Tx_ARROW "Starting installation of Android Development Apps" $GREEN
 BOLD_Tx_ARROW "Installing Genymotion..." $BLUE
-brew cask install genymotion
+brew install --cask genymotion
 
 BOLD_Tx_ARROW "Installing Vysor..." $BLUE
-brew cask install vysor
+brew install --cask vysor
 
 # Web Development
 BOLD_Tx_ARROW "Starting installation of Web Development Apps" $GREEN
 BOLD_Tx_ARROW "Installing Local by Flywheel..." $BLUE
-brew cask install "local"
+brew install --cask "local"
 
 BOLD_Tx_ARROW "Installing Mamp server..." $BLUE
-brew cask install mamp
+brew install --cask mamp
 
 # Database
 BOLD_Tx_ARROW "Starting installation of Database Apps" $GREEN
 BOLD_Tx_ARROW "Installing MongoDB Compass..." $BLUE
-brew cask install mongodb-compass-community
+brew install --cask mongodb-compass
 
 BOLD_Tx_ARROW "Installing Postgres..." $BLUE
-brew cask install postgres
-
-BOLD_Tx_ARROW "Installing PSequel..." $BLUE
-brew cask install psequel
+brew install --cask postgres
 
 BOLD_Tx_ARROW "Installing Sequel Pro..." $BLUE
-brew cask install sequel-pro
+brew install --cask sequel-pro
 
 # IDEs
 BOLD_Tx_ARROW "Intergrated Development Environment (IDE)" $GREEN
 BOLD_Tx_ARROW "Installing Java Eclipse..." $BLUE
-brew cask install eclipse-ide
+brew install --cask eclipse-ide
 
 BOLD_Tx_ARROW "Installing Apache Netbeans..." $BLUE
-brew cask install netbeans
+brew install --cask netbeans
 
 BOLD_Tx_ARROW "Installing Jetbrains Toolbox..." $BLUE
-brew cask install jetbrains-toolbox
+brew install --cask jetbrains-toolbox
 
 BOLD_Tx_ARROW "Installing Unity HUB..." $BLUE
-brew cask install unity-hub
+brew install --cask unity-hub
 
 BOLD_Tx_ARROW "Installing Visual Studio Code..." $BLUE
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 
 # Browsers
 BOLD_Tx_ARROW "Starting installation of Browser Apps" $GREEN
 BOLD_Tx_ARROW "Installing Google Chrome..." $BLUE
-brew cask install google-chrome
+brew install --cask google-chrome
 
 BOLD_Tx_ARROW "Installing Brave Browser..." $BLUE
-brew cask install brave-browser
+brew install --cask brave-browser
 
 BOLD_Tx_ARROW "Installing Mozilla Firefox..." $BLUE
-brew cask install firefox
+brew install --cask firefox
 
 BOLD_Tx_ARROW "Installing Mozilla Firefox Developer Edition..." $BLUE
-brew cask install homebrew/cask-versions/firefox-developer-edition
+brew install --cask homebrew/cask-versions/firefox-developer-edition
 
 # Social Networking Apps
 BOLD_Tx_ARROW "Starting installation of Social Networking Apps" $GREEN
 BOLD_Tx_ARROW "Installing Discord..." $BLUE
-brew cask install discord
+brew install --cask discord
 
 BOLD_Tx_ARROW "Installing Skype..." $BLUE
-brew cask install skype
+brew install --cask skype
 
 BOLD_Tx_ARROW "Installing Slack..." $BLUE
-brew cask install slack
+brew install --cask slack
 
 # Utility Apps
 BOLD_Tx_ARROW "Starting installation of Utility Apps" $GREEN
 BOLD_Tx_ARROW "Installing Alfred 4..." $BLUE
-brew cask install alfred
+brew install --cask alfred
 
 BOLD_Tx_ARROW "Installing CCleaner..." $BLUE
-brew cask install ccleaner
+brew install --cask ccleaner
 
 BOLD_Tx_ARROW "Installing Dropbox..." $BLUE
-brew cask install dropbox
+brew install --cask dropbox
 
 BOLD_Tx_ARROW "Installing Evernote..." $BLUE
-brew cask install evernote
+brew install --cask evernote
 
 BOLD_Tx_ARROW "Installing ImageOptim..." $BLUE
-brew cask install imageoptim
+brew install --cask imageoptim
 
 BOLD_Tx_ARROW "Installing Keka..." $BLUE
-brew cask install keka
+brew install --cask keka
 
 BOLD_Tx_ARROW "Installing Malwarebytes..." $BLUE
-brew cask install malwarebytes
+brew install --cask malwarebytes
 
 BOLD_Tx_ARROW "Installing Spotify..." $BLUE
-brew cask install spotify
+brew install --cask spotify
 
 BOLD_Tx_ARROW "Installing Onyx..." $BLUE
-brew cask install onyx
+brew install --cask onyx
 
 # Set for Auto-Update with Brew Update
 BOLD_Tx_ARROW "Setting Apps for Auto-Update when using brew update..." $GREEN
