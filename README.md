@@ -8,6 +8,10 @@ This script was created with the objective of installing everything you need for
 
 Even though this script is fully functional as of now, I'm still working on the stability of it. So if you get any error or you have any recommendation of what you would like to see added in this script, do not hesitate in letting me know.
 
+## Installing script
+
+`sh ./dev-install.sh`
+
 ## Update Cask Apps after install
 
 `brew cu -af`
