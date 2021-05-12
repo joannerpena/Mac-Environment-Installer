@@ -1,4 +1,4 @@
-# DEV Environment Installer
+# MacOs Development Environment Installer Script
 
 **DISCLAIMER:** It is recommended to use this script with a Fresh installation of your MacOs System to avoid any random errors.
 
@@ -39,6 +39,8 @@ Even though this script is fully functional as of now, I'm still working on the 
   - SQlite
   - MongoDB 
 - **NPM Packages**
+
+  *I removed these Global packages from the script to avoid security concerns.*
   - [np](https://www.npmjs.com/package/np) - A better npm publish.
   - [ndb](https://www.npmjs.com/package/ndb) - Improved debugger for Node.js via Chrome DevTools.
   - [now](https://www.npmjs.com/package/now) - Simple deployment.
@@ -61,6 +63,7 @@ Even though this script is fully functional as of now, I'm still working on the 
 - Docker
 - Github
 - iTerm2
+- Hyper
 - Vagrant
 - Vagrant Manager
 - Virtual Box
@@ -68,6 +71,7 @@ Even though this script is fully functional as of now, I'm still working on the 
 ### Android Development
 
 - Genymotion
+- Vysor
 
 ### Web Development
 
@@ -78,7 +82,6 @@ Even though this script is fully functional as of now, I'm still working on the 
 
 - MongoDB Compass
 - Postgres
-- PSequel
 - Sequel Pro
 
 ### IDEs
