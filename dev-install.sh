@@ -43,7 +43,7 @@ BOLD_HEADER "GENERAL PURPOSE INSTALLATION"
 BOLD_Tx_ARROW "Homebrew" $GREEN
 if ! [ -x "$(command -v brew)" ]; then
     BOLD_Tx_ARROW "Installing homebrew..." $BLUE
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Update repository
