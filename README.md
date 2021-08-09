@@ -4,6 +4,8 @@
 
 This script was created with the objective of installing everything you need for a development environment in your MacOs. From installing Brew for package downloading to Installing NPM packages for local usage.
 
+**I'm currently working on moving the script from Bash to Python for Better Performance and User Interaction.**
+
 ## Still under development
 
 Even though this script is fully functional as of now, I'm still working on the stability of it. So if you get any error or you have any recommendation of what you would like to see added in this script, do not hesitate in letting me know.
@@ -41,10 +43,11 @@ Even though this script is fully functional as of now, I'm still working on the 
   - Postgres
   - MySql
   - SQlite
-  - MongoDB 
+  - MongoDB
 - **NPM Packages**
 
-  *I removed these Global packages from the script to avoid security concerns.*
+  _I removed these Global packages from the script to avoid security concerns._
+
   - [np](https://www.npmjs.com/package/np) - A better npm publish.
   - [ndb](https://www.npmjs.com/package/ndb) - Improved debugger for Node.js via Chrome DevTools.
   - [now](https://www.npmjs.com/package/now) - Simple deployment.
@@ -62,6 +65,7 @@ Even though this script is fully functional as of now, I'm still working on the 
   - [nodemon](https://www.npmjs.com/package/nodemon) - Simple monitor script for use during development of a node.js app.
 
 ## List of Development Apps
+
 ### General Development Apps
 
 - Docker
