@@ -37,7 +37,20 @@ def installPackage(packageName):
         subprocess.call(['brew', 'install', packageName])
     else: 
         Header.emptyLine()
-        Header.BOLD_Tx_GREEN(packageName.capitalize() + ' is installed on your machine already')
+        Header.BOLD_Tx_GREEN(packageName.capitalize() + ' is already installed on your machine')
+        
+def installCaskPackage(packageName, packageTitle):
+    package = does_exist(packageName)
+
+    if package != 0:
+        Header.emptyLine()
+        Header.BOLD_Tx_ARROW_BLUE('Installing ' + packageTitle + '...')
+        
+        Header.emptyLine()
+        subprocess.call(['brew', 'install', '--cask', packageName])
+    else: 
+        Header.emptyLine()
+        Header.BOLD_Tx_GREEN(packageTitle + ' is already installed on your machine')
         
 def updateBrew():
     Header.emptyLine()
