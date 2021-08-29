@@ -9,9 +9,11 @@ import subprocess
 
 from utils.Header import Header
 from scripts.general import general_purpose
+from scripts.web import web_development
 
 subprocess.call("clear", shell = True)
 
 Header.BOLD_Tx('Welcome to Mac Development Environment Installer Script by Joannerpena')
 
-general_purpose()
+# general_purpose()
+web_development()
