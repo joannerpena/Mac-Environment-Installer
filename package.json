@@ -1,0 +1,14 @@
+{
+  "name": "mac-environment-installer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:joannerpena/Mac-Environment-Installer.git",
+  "author": "Joanner Pena <joanner.c1006@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "standard-version": "^9.3.1"
+  },
+  "scripts": {
+    "release": "standard-version"
+  }
+}
