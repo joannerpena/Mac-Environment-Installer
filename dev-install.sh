@@ -155,12 +155,14 @@ brew install rbenv ruby-build rbenv-default-gems rbenv-gemset
 gem update --system
 
 # Install NodeJs
-BOLD_Tx_ARROW "Installing NodeJs..." $BLUE
-brew install node
+BOLD_Tx_ARROW "Installing Node Version Manager..." $BLUE
+brew install nvm
+mkdir ~/.nvm
+nvm install 14
 
-# Node packages for Web Development
-BOLD_HEADER "NPM Packages Installations"
-BOLD_Tx_ARROW "Installing NPM Packages..." $GREEN
+# Install Yarn
+BOLD_Tx_ARROW "Installing Yarn Package Manager..." $GREEN
+brew install yarn
 
 BOLD_HEADER "DevOps"
 BOLD_Tx_ARROW "Starting DevOps Installation..." $GREEN
