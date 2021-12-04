@@ -310,9 +310,6 @@ BOLD_Tx_ARROW "Starting installation of Social Networking Apps" $GREEN
 BOLD_Tx_ARROW "Installing Discord..." $BLUE
 brew install --cask discord
 
-BOLD_Tx_ARROW "Installing Skype..." $BLUE
-brew install --cask skype
-
 BOLD_Tx_ARROW "Installing Slack..." $BLUE
 brew install --cask slack
 

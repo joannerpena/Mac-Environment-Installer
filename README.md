@@ -41,10 +41,11 @@ Even though this script is fully functional as of now, I'm still working on the 
   - Postgres
   - MySql
   - SQlite
-  - MongoDB 
+  - MongoDB
 - **NPM Packages**
 
-  *I removed these Global packages from the script to avoid security concerns.*
+  _I removed these Global packages from the script to avoid security concerns._
+
   - [np](https://www.npmjs.com/package/np) - A better npm publish.
   - [ndb](https://www.npmjs.com/package/ndb) - Improved debugger for Node.js via Chrome DevTools.
   - [now](https://www.npmjs.com/package/now) - Simple deployment.
@@ -62,6 +63,7 @@ Even though this script is fully functional as of now, I'm still working on the 
   - [nodemon](https://www.npmjs.com/package/nodemon) - Simple monitor script for use during development of a node.js app.
 
 ## List of Development Apps
+
 ### General Development Apps
 
 - Docker
@@ -106,7 +108,6 @@ Even though this script is fully functional as of now, I'm still working on the 
 ### Social Networking Apps
 
 - Discord
-- Skype
 - Slack
 
 ### Utilities Apps
