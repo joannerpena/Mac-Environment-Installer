@@ -78,6 +78,10 @@ read GITEMAIL
 git config --global user.name $GITNAME
 git config --global user.email $GITEMAIL
 
+# Install Github CLI
+BOLD_Tx_ARROW "Installing Github CLI..." $GREEN
+brew install gh
+
 # Generate SSH-KEY
 echo
 ssh-keygen -t ed25519 -C $GITEMAIL
@@ -121,12 +125,6 @@ if ! [ -x "$(command -v mysql)" ]; then
     brew install mysql
 fi
 
-# Install SQLite
-if ! [ -x "$(command -v sqlite)" ]; then
-    BOLD_Tx_ARROW "Installing SqLite..." $BLUE
-    brew install sqlite
-fi
-
 # Install MongoDB
 if ! [ -x "$(command -v mongo)" ]; then
     BOLD_Tx_ARROW "Installing MongoDB..." $BLUE
@@ -160,9 +158,11 @@ brew install nvm
 mkdir ~/.nvm
 nvm install 14
 
-# Install Yarn
-BOLD_Tx_ARROW "Installing Yarn Package Manager..." $GREEN
-brew install yarn
+# Install Yarn Bundle Manager
+if ! [ -x "$(command -v yarn)" ]; then
+    BOLD_Tx_ARROW "Installing Yarn Package Manager.." $GREEN
+    brew install yarn
+fi
 
 BOLD_HEADER "DevOps"
 BOLD_Tx_ARROW "Starting DevOps Installation..." $GREEN
@@ -171,19 +171,6 @@ BOLD_Tx_ARROW "Starting DevOps Installation..." $GREEN
 if ! [ -x "$(command -v heroku)" ]; then
     BOLD_Tx_ARROW "Installing Heroku..." $BLUE
     brew tap heroku/brew && brew install heroku
-fi
-
-# Install Vagrant
-if ! [ -x "$(command -v vagrant)" ]; then
-    BOLD_Tx_ARROW "Installing Vagrant..." $BLUE
-    brew install --cask vagrant
-    brew install --cask vagrant-manager
-fi
-
-# Install Yarn Bundle Manager
-if ! [ -x "$(command -v yarn)" ]; then
-    BOLD_Tx_ARROW "Installing Yarn..." $GREEN
-    brew install yarn
 fi
 
 ## Mobile Development
@@ -240,12 +227,6 @@ brew install --cask iterm2
 BOLD_Tx_ARROW "Installing HyperJS Terminal..." $BLUE
 brew install --cask hyper
 
-BOLD_Tx_ARROW "Installing Vagrant..." $BLUE
-brew install --cask vagrant
-
-BOLD_Tx_ARROW "Installing Vagrant Manager..." $BLUE
-brew install --cask vagrant-manager
-
 BOLD_Tx_ARROW "Installing Virtual Box..." $BLUE
 brew install --cask virtualbox
 
@@ -261,9 +242,6 @@ brew install --cask vysor
 BOLD_Tx_ARROW "Starting installation of Web Development Apps" $GREEN
 BOLD_Tx_ARROW "Installing Local by Flywheel..." $BLUE
 brew install --cask "local"
-
-BOLD_Tx_ARROW "Installing Mamp server..." $BLUE
-brew install --cask mamp
 
 # Database
 BOLD_Tx_ARROW "Starting installation of Database Apps" $GREEN
@@ -281,14 +259,8 @@ BOLD_Tx_ARROW "Intergrated Development Environment (IDE)" $GREEN
 BOLD_Tx_ARROW "Installing Java Eclipse..." $BLUE
 brew install --cask eclipse-ide
 
-BOLD_Tx_ARROW "Installing Apache Netbeans..." $BLUE
-brew install --cask netbeans
-
 BOLD_Tx_ARROW "Installing Jetbrains Toolbox..." $BLUE
 brew install --cask jetbrains-toolbox
-
-BOLD_Tx_ARROW "Installing Unity HUB..." $BLUE
-brew install --cask unity-hub
 
 BOLD_Tx_ARROW "Installing Visual Studio Code..." $BLUE
 brew install --cask visual-studio-code
