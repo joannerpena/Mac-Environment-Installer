@@ -173,6 +173,12 @@ if ! [ -x "$(command -v heroku)" ]; then
     brew tap heroku/brew && brew install heroku
 fi
 
+# Install Lando
+if ! [ -x "$(command -v lando)" ]; then
+    BOLD_Tx_ARROW "Installing Lando..." $BLUE
+    brew install lando
+fi
+
 ## Mobile Development
 # //////////////////////////////////////////////////////////////////////////////// #
 BOLD_HEADER "MOBILE DEVELOPMENT"
