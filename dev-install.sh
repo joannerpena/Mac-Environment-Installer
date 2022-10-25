@@ -202,7 +202,7 @@ fi
 # Install Java
 if ! [ -x "$(command -v java)" ]; then
     BOLD_Tx_ARROW "Installing Java..." $BLUE
-    brew install --cask oracle-jdk
+    brew install openjdk
 fi
 
 ## Development Apps
