@@ -70,8 +70,6 @@ Even though this script is fully functional as of now, I'm still working on the 
 - Github
 - iTerm2
 - Hyper
-- Vagrant
-- Vagrant Manager
 - Virtual Box
 
 ### Android Development
@@ -82,7 +80,6 @@ Even though this script is fully functional as of now, I'm still working on the 
 ### Web Development
 
 - Local by Flywheel
-- MAMP
 
 ### Database
 
@@ -93,9 +90,7 @@ Even though this script is fully functional as of now, I'm still working on the 
 ### IDEs
 
 - Eclipse
-- Apache Netbeans
 - Jetbrains Toolbox | _Install any Jetbrain app + Android Studios with Jetbrain Toolbox_
-- Unity HUB | _Install Unity IDE for Gaming Development_
 - Visual Studio Code
 
 ### Browsers
