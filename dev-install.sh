@@ -113,12 +113,6 @@ BOLD_HEADER "WEB DEVELOPMENT"
 BOLD_Tx_ARROW "Starting Web Development Installation..." $GREEN
 BOLD_Tx_ARROW "Installing Databases..." $GREEN
 
-# Install Postgres
-if ! [ -x "$(command -v postgres)" ]; then
-    BOLD_Tx_ARROW "Installing postgres..." $BLUE
-    brew install postgres
-fi
-
 # Install MySql
 if ! [ -x "$(command -v mysql)" ]; then
     BOLD_Tx_ARROW "Installing mySql..." $BLUE
@@ -173,10 +167,12 @@ if ! [ -x "$(command -v heroku)" ]; then
     brew tap heroku/brew && brew install heroku
 fi
 
-# Install Lando
-if ! [ -x "$(command -v lando)" ]; then
-    BOLD_Tx_ARROW "Installing Lando..." $BLUE
-    brew install lando
+# Install DDEV
+if ! [ -x "$(command -v ddev)" ]; then
+    BOLD_Tx_ARROW "Installing DDEV..." $BLUE
+    brew install ddev/ddev/ddev
+    brew upgrade ddev
+    mkcert -install
 fi
 
 ## Mobile Development
@@ -213,13 +209,14 @@ BOLD_HEADER "Development Apps"
 BOLD_Tx_ARROW "Installing Auto-Update..." $GREEN
 brew tap buo/cask-upgrade
 
+# Install Cask Versions
+BOLD_Tx_ARROW "Installing Cask-Versions..." $GREEN
+brew tap homebrew/cask-versions
+
 # General Development Apps
 BOLD_Tx_ARROW "Starting installation of Web Development Apps" $GREEN
 BOLD_Tx_ARROW "Installing Docker Desktop..." $BLUE
 brew install --cask docker
-
-BOLD_Tx_ARROW "Installing Transmit FTP..." $BLUE
-brew install --cask transmit
 
 BOLD_Tx_ARROW "Installing Github Desktop..." $BLUE
 brew install --cask github
@@ -227,8 +224,11 @@ brew install --cask github
 BOLD_Tx_ARROW "Installing GitKraken..." $BLUE
 brew install --cask gitkraken
 
-BOLD_Tx_ARROW "Installing iTerm2 Terminal..." $BLUE
-brew install --cask iterm2
+BOLD_Tx_ARROW "Installing SourceTree..." $BLUE
+brew install --cask sourcetree
+
+BOLD_Tx_ARROW "Installing Warp..." $BLUE
+brew install --cask warp
 
 BOLD_Tx_ARROW "Installing HyperJS Terminal..." $BLUE
 brew install --cask hyper
@@ -236,35 +236,29 @@ brew install --cask hyper
 BOLD_Tx_ARROW "Installing Virtual Box..." $BLUE
 brew install --cask virtualbox
 
-# Android Development
-BOLD_Tx_ARROW "Starting installation of Android Development Apps" $GREEN
-BOLD_Tx_ARROW "Installing Genymotion..." $BLUE
-brew install --cask genymotion
-
-BOLD_Tx_ARROW "Installing Vysor..." $BLUE
-brew install --cask vysor
-
 # Web Development
 BOLD_Tx_ARROW "Starting installation of Web Development Apps" $GREEN
 BOLD_Tx_ARROW "Installing Local by Flywheel..." $BLUE
 brew install --cask "local"
+
+BOLD_Tx_ARROW "Installing Devkinsta..." $BLUE
+brew install --cask devkinsta
+
+BOLD_Tx_ARROW "Installing Postman..." $BLUE
+brew install --cask postman
 
 # Database
 BOLD_Tx_ARROW "Starting installation of Database Apps" $GREEN
 BOLD_Tx_ARROW "Installing MongoDB Compass..." $BLUE
 brew install --cask mongodb-compass
 
-BOLD_Tx_ARROW "Installing Postgres..." $BLUE
-brew install --cask postgres
-
 BOLD_Tx_ARROW "Installing Sequel Pro..." $BLUE
 brew install --cask sequel-pro
 
-# IDEs
-BOLD_Tx_ARROW "Intergrated Development Environment (IDE)" $GREEN
-BOLD_Tx_ARROW "Installing Java Eclipse..." $BLUE
-brew install --cask eclipse-ide
+BOLD_Tx_ARROW "Installing Tableplus..." $BLUE
+brew install --cask tableplus
 
+# IDEs
 BOLD_Tx_ARROW "Installing Jetbrains Toolbox..." $BLUE
 brew install --cask jetbrains-toolbox
 
@@ -283,15 +277,12 @@ BOLD_Tx_ARROW "Installing Mozilla Firefox..." $BLUE
 brew install --cask firefox
 
 BOLD_Tx_ARROW "Installing Mozilla Firefox Developer Edition..." $BLUE
-brew install --cask homebrew/cask-versions/firefox-developer-edition
+brew install --cask firefox-developer-edition
 
 # Social Networking Apps
 BOLD_Tx_ARROW "Starting installation of Social Networking Apps" $GREEN
 BOLD_Tx_ARROW "Installing Discord..." $BLUE
 brew install --cask discord
-
-BOLD_Tx_ARROW "Installing Slack..." $BLUE
-brew install --cask slack
 
 # Utility Apps
 BOLD_Tx_ARROW "Starting installation of Utility Apps" $GREEN
@@ -309,6 +300,9 @@ brew install --cask evernote
 
 BOLD_Tx_ARROW "Installing ImageOptim..." $BLUE
 brew install --cask imageoptim
+
+BOLD_Tx_ARROW "Installing Figma..." $BLUE
+brew install --cask figma
 
 BOLD_Tx_ARROW "Installing Keka..." $BLUE
 brew install --cask keka
@@ -351,9 +345,14 @@ rm -rf ~/Downloads/zsh-config
 source ~/.zshrc
 
 # Installing Powerline fonts
-BOLD_Tx_ARROW "Downloading ZSH Config..." $BLUE
+BOLD_Tx_ARROW "Downloading Powerline Fonts..." $BLUE
 git clone https://github.com/powerline/fonts.git ~/Downloads/powerline
 sh ~/Downloads/powerline/install.sh
 rm -rf ~/Downloads/powerline
+
+# Installing Powerline fonts
+BOLD_Tx_ARROW "Downloading Fira Code Font..." $BLUE
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
 
 clear

@@ -38,9 +38,7 @@ Even though this script is fully functional as of now, I'm still working on the 
   - [ZSH Theme : Bullet-Train](https://github.com/caiogondim/bullet-train.zsh)
   - [Powerline Fonts](https://github.com/powerline/fonts)
 - **Database**
-  - Postgres
   - MySql
-  - SQlite
   - MongoDB
 - **NPM Packages**
 
@@ -72,24 +70,20 @@ Even though this script is fully functional as of now, I'm still working on the 
 - Hyper
 - Virtual Box
 
-### Android Development
-
-- Genymotion
-- Vysor
-
 ### Web Development
 
 - Local by Flywheel
+- Devkinsta
+- Postman
 
 ### Database
 
 - MongoDB Compass
-- Postgres
 - Sequel Pro
+- Tableplus
 
 ### IDEs
 
-- Eclipse
 - Jetbrains Toolbox | _Install any Jetbrain app + Android Studios with Jetbrain Toolbox_
 - Visual Studio Code
 
@@ -103,13 +97,13 @@ Even though this script is fully functional as of now, I'm still working on the 
 ### Social Networking Apps
 
 - Discord
-- Slack
 
 ### Utilities Apps
 
 - Alfred 4
 - CCleaner
 - Dropbox
+- Figma
 - Evernote
 - Spotify
 - ImageOptim
