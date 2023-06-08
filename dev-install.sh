@@ -338,19 +338,6 @@ echo "\n${GREEN}Installation Finished...\n"
 echo "Press any button to finish..."
 read
 
-# Install ZSH Theme
-BOLD_Tx_ARROW "Installing ZSH Theme..." $BLUE
-git clone https://github.com/caiogondim/bullet-train.zsh.git ~/Downloads/bullet-train
-cp ~/Downloads/bullet-train/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes
-rm -rf ~/Downloads/bullet-train
-
-# Download ZSH Config file
-BOLD_Tx_ARROW "Downloading ZSH Config..." $BLUE
-git clone https://gist.github.com/c227b6b00817eecd79523aa639ade6fc.git ~/Downloads/zsh-config
-cp ~/Downloads/zsh-config/.zshrc ~/
-rm -rf ~/Downloads/zsh-config
-source ~/.zshrc
-
 # Installing Powerline fonts
 BOLD_Tx_ARROW "Downloading Powerline Fonts..." $BLUE
 git clone https://github.com/powerline/fonts.git ~/Downloads/powerline
@@ -367,5 +354,17 @@ BOLD_HEADER "Oh My ZSH"
 BOLD_Tx_ARROW "Installing Oh my ZSH..." $GREEN
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Install ZSH Theme
+BOLD_Tx_ARROW "Installing ZSH Theme..." $BLUE
+git clone https://github.com/caiogondim/bullet-train.zsh.git ~/Downloads/bullet-train
+cp ~/Downloads/bullet-train/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes
+rm -rf ~/Downloads/bullet-train
+
+# Download ZSH Config file
+BOLD_Tx_ARROW "Downloading ZSH Config..." $BLUE
+git clone https://gist.github.com/c227b6b00817eecd79523aa639ade6fc.git ~/Downloads/zsh-config
+cp ~/Downloads/zsh-config/.zshrc ~/
+rm -rf ~/Downloads/zsh-config
+source ~/.zshrc
 
 clear
