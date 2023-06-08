@@ -146,6 +146,18 @@ if ! [ -x "$(command -v yarn)" ]; then
     brew install yarn
 fi
 
+# Install Conventional Commits
+if ! [ -x "$(command -v cz)" ]; then
+    BOLD_Tx_ARROW "Installing Conventional Commits..." $GREEN
+    sudo npm install -g @commitlint/cli
+    sudo npm install -g @commitlint/config-conventional
+    echo "module.exports = { extends: ['@commitlint/config-conventional'] }" > ~/.commitlintrc.js
+
+    sudo npm install -g commitizen
+    sudo npm install -g cz-conventional-changelog
+    echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+fi
+
 BOLD_HEADER "DevOps"
 BOLD_Tx_ARROW "Starting DevOps Installation..." $GREEN
 
